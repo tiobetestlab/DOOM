@@ -1,0 +1,26 @@
+name: TiCS
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  TiCS:
+    name: TiCS
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Env
+      run: apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: make all
+      run: make all
+    - name: TICS Client
+      uses: tiobe/tics-github-action@v2
+      with:
+        projectName: auto
+        ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=default'
+        installTics: true
+        recalc: 'CW,CS'
+        filelist: .
+        ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
+        pullRequestApproval: false
+        postAnnotations: true

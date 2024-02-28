@@ -22,5 +22,5 @@ jobs:
         recalc: 'CW,CS'
         filelist: .
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
-        pullRequestApproval: false
-        postAnnotations: true
+        githubToken: ${{ secrets.GITHUBTOKEN }}
+        

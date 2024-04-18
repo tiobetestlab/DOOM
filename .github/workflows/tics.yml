@@ -19,7 +19,7 @@ jobs:
         projectName: auto
         ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=default'
         installTics: true
-        recalc: 'CW,CS'
+        recalc: 'ALL,GATE'
         filelist: .
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
         githubToken: ${{secrets.GITHUB_TOKEN}}

@@ -16,7 +16,7 @@ jobs:
     - name: TICS Client Analysis
       uses: tiobe/tics-github-action@v2
       with:
-        projectName: auto
+        projectName: DOOM
         ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=default'
         installTics: true
         recalc: 'ALL,GATE'

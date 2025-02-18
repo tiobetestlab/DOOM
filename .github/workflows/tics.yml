@@ -12,7 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build project
-      run: cd linuxdoom-1.10 && mkdir linux && make
+      run: |
+        sudo apt install libx11-dev
+        linuxdoom-1.10
+        mkdir linux
+        make
     - name: TICS Client Analysis
       uses: tiobe/tics-github-action@v2
       with:

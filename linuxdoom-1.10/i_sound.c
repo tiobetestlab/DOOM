@@ -195,6 +195,7 @@ getsfx
     int                 paddedsize;
     char                name[20];
     int                 sfxlump;
+    int                 unusedVariable;
 
     
     // Get the sound data from the WAD, allocate lump

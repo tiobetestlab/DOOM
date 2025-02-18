@@ -7,20 +7,23 @@ jobs:
     name: TiCS
     runs-on: ubuntu-latest
     steps:
-    #- name: Build Env
-    #  run: apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl
+    - name: Build Env
+      run: |
+        sudo apt update
+        sudo apt install -y --no-install-recommends apt-utils build-essential curl libx11-dev libxext-dev libnsl2
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build project
-      run: cd linuxdoom-1.10 && mkdir linux && make
+      run: |
+        cd linuxdoom-1.10
+        mkdir linux
+        make
     - name: TICS Client Analysis
-      uses: tiobe/tics-github-action@v2
+      uses: tiobe/tics-github-action@v3
       with:
-        projectName: auto
-        ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=default'
+        project: DOOM
+        viewerUrl: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
         installTics: true
-        recalc: 'ALL,GATE'
-        filelist: .
+        recalc: GATE
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
-        githubToken: ${{secrets.GITHUB_TOKEN}}
         

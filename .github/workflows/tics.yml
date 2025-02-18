@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Build project
       run: |
-        mv linuxdoom-1.10/* ./
+        cd linuxdoom-1.10
         mkdir linux
         make
     - name: TICS Client Analysis
@@ -24,7 +24,6 @@ jobs:
         project: DOOM
         viewerUrl: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
         installTics: true
-        filelist: .
         recalc: GATE
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
         

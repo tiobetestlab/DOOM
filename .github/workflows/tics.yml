@@ -7,13 +7,12 @@ jobs:
     name: TiCS
     runs-on: ubuntu-latest
     steps:
-    #- name: Build Env
-    #  run: apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl
+    - name: Build Env
+      run: apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl libx11-dev libxext-dev libnsl
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build project
       run: |
-        sudo apt install -y libx11-dev libxext-dev libnsl
         cd linuxdoom-1.10
         mkdir linux
         make

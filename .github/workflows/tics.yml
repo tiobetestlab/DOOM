@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Build Env
-      run: apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl libx11-dev libxext-dev libnsl
+      run: sudo apt update && apt install -y --no-install-recommends apt-utils build-essential sudo git nodejs curl libx11-dev libxext-dev libnsl2
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build project

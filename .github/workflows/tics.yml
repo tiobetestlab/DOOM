@@ -22,7 +22,7 @@ jobs:
       uses: tiobe/tics-github-action@v2
       with:
         projectName: DOOM
-        ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=default'
+        ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
         installTics: true
         recalc: 'GATE'
         filelist: .

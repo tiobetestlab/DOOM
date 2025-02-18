@@ -24,6 +24,7 @@ jobs:
         project: DOOM
         viewerUrl: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
         installTics: true
+        filelist: i_system.c i_sound.c
         recalc: GATE
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
         

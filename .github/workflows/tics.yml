@@ -21,10 +21,9 @@ jobs:
     - name: TICS Client Analysis
       uses: tiobe/tics-github-action@v3
       with:
-        projectName: DOOM
-        ticsConfiguration: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
+        project: DOOM
+        viewerUrl: 'https://testlab.tiobe.com/tiobeweb/releasetest/api/cfg?name=shared-cfg'
         installTics: true
         recalc: GATE
         ticsAuthToken: ${{secrets.RELEASETESTTOKEN}}
-        githubToken: ${{secrets.GITHUB_TOKEN}}
         
